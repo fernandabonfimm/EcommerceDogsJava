@@ -1,18 +1,30 @@
-package User; 
+package classes.src.User;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class User {
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String name;
     private String cpf;
     private String email;
-    private Date birthdate;
+    private LocalDate birthdate;
 
-    public User(String name, String cpf, String email, Date birthdate){
+    public User(int id, String name, String cpf, String email, LocalDate birthdate) {
         this.name = name;
         this.cpf = cpf;
         this.email = email;
         this.birthdate = birthdate;
+        this.id = id;
     }
 
     public String getName() {
@@ -39,11 +51,11 @@ public class User {
         this.email = email;
     }
 
-    public Date getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 
