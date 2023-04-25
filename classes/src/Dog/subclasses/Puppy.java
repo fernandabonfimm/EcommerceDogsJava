@@ -3,6 +3,7 @@ package classes.src.Dog.subclasses;
 import classes.src.Dog.Dog;
 import classes.src.SaudeDoAnimal.Alimentacao.Dieta;
 import classes.src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
+import src.SaudeDoAnimal.SaudeAnimal;
 
 public class Puppy extends Dog {
     private Padreador matrizPadreador;
@@ -10,13 +11,17 @@ public class Puppy extends Dog {
     private CarteiraVacinacao carteiraVacinacao;
     private Dieta dieta;
 
+    private SaudeAnimal dogHealth;
+
+
     public Puppy(int chip, String name, Number pedigree, Padreador matrizPadreador, Double valorFilhote,
-            CarteiraVacinacao carteiraVacinacao, Dieta dieta) {
+            CarteiraVacinacao carteiraVacinacao, Dieta dieta, SaudeAnimal dogHealth) {
         super(chip, name, pedigree);
         this.matrizPadreador = matrizPadreador;
         this.valorFilhote = valorFilhote;
         this.carteiraVacinacao = new CarteiraVacinacao();
         this.dieta = dieta;
+        this.dogHealth = dogHealth;
     }
 
     public Dieta getDieta() {
@@ -58,4 +63,6 @@ public class Puppy extends Dog {
     public void exibirCarteiraVacinação() {
         this.carteiraVacinacao.exibirCarteiraVacinação();
     }
+
+    public SaudeAnimal getDogHealth() {return this.dogHealth;}
 }

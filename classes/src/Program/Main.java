@@ -13,6 +13,8 @@ import classes.src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
 import classes.src.User.subclasse.Buyer;
 import classes.src.User.subclasse.Dono;
 import classes.src.User.subclasse.Veterinary;
+import classes.src.SaudeDoAnimal.Consulta.Consulta;
+import src.SaudeDoAnimal.SaudeAnimal;
 
 import java.lang.System;
 
@@ -38,10 +40,15 @@ public class Main {
 
         // Parte dos filhotes
         CarteiraVacinacao carteira = new CarteiraVacinacao();
-        Puppy filhote = new Puppy(456, "Fido", 789, padreador, 1.500, carteira, dieta);
-        Puppy filhote2 = new Puppy(458, "Isabel", 689, padreador, 2.500, carteira, dieta);
-        Puppy filhote3 = new Puppy(459, "Joaninha", 889, padreador, 3.000, carteira, dieta);
-        Puppy filhote4 = new Puppy(460, "Amelio", 889, padreador, 1.000, carteira, dieta);
+        Puppy filhote = new Puppy(456, "Fido", 789, padreador, 1.500, carteira, dieta, SaudeAnimal.DOENTE);
+        Puppy filhote2 = new Puppy(458, "Isabel", 689, padreador, 2.500, carteira, dieta, SaudeAnimal.DOENTE);
+        Puppy filhote3 = new Puppy(459, "Joaninha", 889, padreador, 3.000, carteira,dieta, SaudeAnimal.FERIDO);
+        Puppy filhote4 = new Puppy(460, "Amelio", 889, padreador, 1.000, carteira,dieta, SaudeAnimal.DESNUTRIDO);
+
+
+        // Verificar Saude dos Puppy
+        Consulta consulta = new Consulta(veterinario,filhote,LocalDate.of(2023, 4, 25));
+        consulta.realizarConsulta();
 
         // Parte da compra e do comprador de filhotes
         System.out.println("Digite o nome do comprador: ");
