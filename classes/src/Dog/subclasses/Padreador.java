@@ -4,16 +4,16 @@ import classes.src.Dog.Dog;
 import classes.src.User.subclasse.Dono;
 
 public class Padreador extends Dog {
+    private Dog mother;
+    private Dog father;
+    private Dono owner;
+    
     public Padreador(int chip, String name, Number pedigree, Dog father, Dog mother, Dono owner) {
         super(chip, name, pedigree);
         this.father = father;
         this.mother = mother;
         this.owner = owner;
     }
-
-    private Dog mother;
-    private Dog father;
-    private Dono owner;
 
     public Dog getMother() {
         return mother;

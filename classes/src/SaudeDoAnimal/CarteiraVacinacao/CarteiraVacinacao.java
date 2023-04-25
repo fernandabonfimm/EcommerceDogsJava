@@ -6,6 +6,14 @@ import java.util.Map;
 public class CarteiraVacinacao {
     private Map<String, String> vacinas;
 
+    public Map<String, String> getVacinas() {
+        return vacinas;
+    }
+
+    public void setVacinas(Map<String, String> vacinas) {
+        this.vacinas = vacinas;
+    }
+
     public CarteiraVacinacao() {
         this.vacinas = new HashMap<>();
         this.vacinas.put("V8", "");

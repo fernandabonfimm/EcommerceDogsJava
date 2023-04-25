@@ -8,6 +8,7 @@ import classes.src.Compra.NotaFiscal.NotaFiscal;
 import classes.src.Dog.Dog;
 import classes.src.Dog.subclasses.Padreador;
 import classes.src.Dog.subclasses.Puppy;
+import classes.src.SaudeDoAnimal.Alimentacao.Dieta;
 import classes.src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
 import classes.src.User.subclasse.Buyer;
 import classes.src.User.subclasse.Dono;
@@ -32,13 +33,15 @@ public class Main {
         // Parte do veterinário
         Veterinary veterinario = new Veterinary(2, "Fernanda", "123.456.777-01", "fernanda@gmail.com",
                 LocalDate.of(2002, 2, 13), "123456", "987654321");
+        
+        Dieta dieta = new Dieta();
 
         // Parte dos filhotes
         CarteiraVacinacao carteira = new CarteiraVacinacao();
-        Puppy filhote = new Puppy(456, "Fido", 789, padreador, 1.500, carteira);
-        Puppy filhote2 = new Puppy(458, "Isabel", 689, padreador, 2.500, carteira);
-        Puppy filhote3 = new Puppy(459, "Joaninha", 889, padreador, 3.000, carteira);
-        Puppy filhote4 = new Puppy(460, "Amelio", 889, padreador, 1.000, carteira);
+        Puppy filhote = new Puppy(456, "Fido", 789, padreador, 1.500, carteira, dieta);
+        Puppy filhote2 = new Puppy(458, "Isabel", 689, padreador, 2.500, carteira, dieta);
+        Puppy filhote3 = new Puppy(459, "Joaninha", 889, padreador, 3.000, carteira, dieta);
+        Puppy filhote4 = new Puppy(460, "Amelio", 889, padreador, 1.000, carteira, dieta);
 
         // Parte da compra e do comprador de filhotes
         System.out.println("Digite o nome do comprador: ");
