@@ -1,4 +1,4 @@
-package classes.src.SaudeDoAnimal.CarteiraVacinacao;
+package src.SaudeDoAnimal.CarteiraVacinacao;
 
 import java.util.HashMap;
 import java.util.Map;

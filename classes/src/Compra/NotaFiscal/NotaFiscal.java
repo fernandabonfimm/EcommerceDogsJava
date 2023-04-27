@@ -1,4 +1,4 @@
-package classes.src.Compra.NotaFiscal;
+package src.Compra.NotaFiscal;
 
 import java.time.LocalDate;
 

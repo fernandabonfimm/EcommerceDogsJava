@@ -1,7 +1,6 @@
-package classes.src.Dog.subclasses;
-
-import classes.src.Dog.Dog;
-import classes.src.User.subclasse.Dono;
+package src.Dog.subclasses;
+import src.Dog.Dog;
+import src.User.subclasse.Dono;
 
 public class Padreador extends Dog {
     private Dog mother;

@@ -1,8 +1,8 @@
-package classes.src.User.subclasse;
+package src.User.subclasse;
 
 import java.time.LocalDate;
 
-import classes.src.User.User;
+import src.User.User;
 
 public class Veterinary extends User {
     private String crmv;

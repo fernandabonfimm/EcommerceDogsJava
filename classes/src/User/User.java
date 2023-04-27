@@ -1,4 +1,4 @@
-package classes.src.User;
+package src.User;
 
 import java.sql.Date;
 import java.time.LocalDate;

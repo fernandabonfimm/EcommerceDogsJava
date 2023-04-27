@@ -1,4 +1,4 @@
-package classes.src.SaudeDoAnimal.Alimentacao;
+package src.SaudeDoAnimal.Alimentacao;
 
 public class Dieta {
 

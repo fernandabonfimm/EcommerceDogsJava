@@ -1,11 +1,11 @@
-package classes.src.SaudeDoAnimal.Consulta;
+package src.SaudeDoAnimal.Consulta;
 
 import java.time.LocalDate;
 import java.util.Map;
 
-import classes.src.Dog.subclasses.Puppy;
-import classes.src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
-import classes.src.User.subclasse.Veterinary;
+import src.Dog.subclasses.Puppy;
+import src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
+import src.User.subclasse.Veterinary;
 import src.SaudeDoAnimal.Exams.subclasses.Blood;
 import src.SaudeDoAnimal.Exams.subclasses.Displasia;
 import src.SaudeDoAnimal.Exams.subclasses.Feces;

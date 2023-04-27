@@ -4,16 +4,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.Scanner;
 
-import classes.src.Compra.NotaFiscal.NotaFiscal;
-import classes.src.Dog.Dog;
-import classes.src.Dog.subclasses.Padreador;
-import classes.src.Dog.subclasses.Puppy;
-import classes.src.SaudeDoAnimal.Alimentacao.Dieta;
-import classes.src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
-import classes.src.User.subclasse.Buyer;
-import classes.src.User.subclasse.Dono;
-import classes.src.User.subclasse.Veterinary;
-import classes.src.SaudeDoAnimal.Consulta.Consulta;
+import src.Compra.DogList;
+import src.Compra.NotaFiscal.NotaFiscal;
+import src.Dog.Dog;
+import src.Dog.subclasses.Padreador;
+import src.Dog.subclasses.Puppy;
+import src.SaudeDoAnimal.Alimentacao.Dieta;
+import src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
+import src.User.subclasse.Buyer;
+import src.User.subclasse.Dono;
+import src.User.subclasse.Veterinary;
+import src.SaudeDoAnimal.Consulta.Consulta;
 import src.SaudeDoAnimal.SaudeAnimal;
 
 import java.lang.System;
@@ -40,15 +41,25 @@ public class Main {
 
         // Parte dos filhotes
         CarteiraVacinacao carteira = new CarteiraVacinacao();
-        Puppy filhote = new Puppy(456, "Fido", 789, padreador, 1.500, carteira, dieta, SaudeAnimal.DOENTE);
-        Puppy filhote2 = new Puppy(458, "Isabel", 689, padreador, 2.500, carteira, dieta, SaudeAnimal.DOENTE);
-        Puppy filhote3 = new Puppy(459, "Joaninha", 889, padreador, 3.000, carteira,dieta, SaudeAnimal.FERIDO);
-        Puppy filhote4 = new Puppy(460, "Amelio", 889, padreador, 1.000, carteira,dieta, SaudeAnimal.DESNUTRIDO);
+        Puppy filhote = new Puppy(456, "Fido", 789, padreador, 1500.0, carteira, dieta, SaudeAnimal.DOENTE);
+        Puppy filhote2 = new Puppy(458, "Isabel", 689, padreador, 2500.0, carteira, dieta, SaudeAnimal.DOENTE);
+        Puppy filhote3 = new Puppy(459, "Joaninha", 889, padreador, 3000.0, carteira,dieta, SaudeAnimal.DESNUTRIDO);
+        Puppy filhote4 = new Puppy(460, "Amelio", 889, padreador, 1000.0, carteira,dieta, SaudeAnimal.DESNUTRIDO);
 
 
         // Verificar Saude dos Puppy
         Consulta consulta = new Consulta(veterinario,filhote,LocalDate.of(2023, 4, 25));
         consulta.realizarConsulta();
+
+        DogList listaCatiorro = new DogList();
+        listaCatiorro.addToList(filhote4);
+        listaCatiorro.addToList(filhote3);
+        listaCatiorro.addToList(filhote2);
+        listaCatiorro.addToList(filhote);
+
+        listaCatiorro.showAll();
+        listaCatiorro.showNaoReservados();
+        listaCatiorro.showReservados();
 
         // Parte da compra e do comprador de filhotes
         System.out.println("Digite o nome do comprador: ");
@@ -65,7 +76,7 @@ public class Main {
         LocalDate dataNascimento = LocalDate.parse(scanner.nextLine(), formatter);
 
         System.out.println("Digite o salário do comprador: ");
-        String salario = scanner.nextLine();
+        double salario = scanner.nextDouble();
 
         System.out.println("Digite o telefone do comprador: ");
         String telefone = scanner.nextLine();
@@ -100,7 +111,8 @@ public class Main {
                 System.out.println("Opção inválida.");
                 return;
         }
-
+        comprador.buyDog(filhoteEscolhido);
+    
         LocalDate dataEntrega = LocalDate.of(2023, 4, 30);
         LocalDate dataCompra = LocalDate.of(2023, 4, 23);
         double valorFilhote = 1500.0;
@@ -147,5 +159,8 @@ public class Main {
         } else {
             System.out.println("Nota fiscal não impressa!");
         }
+
+        listaCatiorro.showNaoReservados();
+        listaCatiorro.showReservados();
     }
 }

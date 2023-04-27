@@ -1,9 +1,9 @@
-package classes.src.User.subclasse;
+package src.User.subclasse;
 
 import java.sql.Date;
 import java.time.LocalDate;
 
-import classes.src.User.User;
+import src.User.User;
 
 public class Dono extends User {
     public Dono(int id, String name, String cpf, String email, LocalDate birthdate, String phone, String address) {

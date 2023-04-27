@@ -1,8 +1,11 @@
-package classes.src.Dog.subclasses;
+package src.Dog.subclasses;
 
-import classes.src.Dog.Dog;
-import classes.src.SaudeDoAnimal.Alimentacao.Dieta;
-import classes.src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
+import java.util.LinkedList;
+
+import src.Dog.Dog;
+import src.SaudeDoAnimal.Alimentacao.Dieta;
+import src.SaudeDoAnimal.CarteiraVacinacao.CarteiraVacinacao;
+import src.SaudeDoAnimal.Exams.Exames;
 import src.SaudeDoAnimal.SaudeAnimal;
 
 public class Puppy extends Dog {
@@ -10,8 +13,9 @@ public class Puppy extends Dog {
     private Double valorFilhote;
     private CarteiraVacinacao carteiraVacinacao;
     private Dieta dieta;
-
+    private boolean reservado = false;
     private SaudeAnimal dogHealth;
+    private Exames[] examesDog = new Exames[3];
 
 
     public Puppy(int chip, String name, Number pedigree, Padreador matrizPadreador, Double valorFilhote,
@@ -22,6 +26,9 @@ public class Puppy extends Dog {
         this.carteiraVacinacao = new CarteiraVacinacao();
         this.dieta = dieta;
         this.dogHealth = dogHealth;
+        examesDog[0] = null;
+        examesDog[1] = null;
+        examesDog[2] = null;
     }
 
     public Dieta getDieta() {
@@ -65,4 +72,16 @@ public class Puppy extends Dog {
     }
 
     public SaudeAnimal getDogHealth() {return this.dogHealth;}
+
+    public boolean getReservado(){ return reservado;}
+
+    public void setResevado(){
+        reservado = true;
+    }
+    public void setExames(Exames[] exames)
+    {
+        examesDog[0] = exames[0];
+        examesDog[1] = exames[1];
+        examesDog[2] = exames[2];
+    }
 }

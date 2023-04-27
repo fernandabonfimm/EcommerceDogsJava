@@ -1,4 +1,4 @@
-package classes.src.Dog;
+package src.Dog;
 
 public class Dog{
     private int chip;
